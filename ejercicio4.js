@@ -1,6 +1,6 @@
 function fizzBuzz(n){
-    if (typeof n!=="number" && !Number.isInteger(n)){
-        return console.log("Por favor ingrese un número válido.");
+    if (typeof n!=="number" || !Number.isInteger(n)){
+        return "Por favor ingrese un número válido.";
     }
 
     for(let i=1;i<=n;i++){
@@ -17,4 +17,4 @@ function fizzBuzz(n){
     return ""
 }
  
-console.log(fizzBuzz(555)); 
+console.log(fizzBuzz(1.6)); 
