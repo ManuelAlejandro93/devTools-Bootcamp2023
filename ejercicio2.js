@@ -43,4 +43,3 @@ function formatear (arr){
 
 
 console.log(formatear(arregloNumerico));
-
