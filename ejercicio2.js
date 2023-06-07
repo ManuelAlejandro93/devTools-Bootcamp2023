@@ -4,24 +4,43 @@ let arregloLiteral = arregloNumerico.map(
     n=>n.toString()
 )
 
-function darFormatoAlNumero (arr){
+function formatear (arr){
     let telefonoNuevo = "";
-    for(let i=0;i<arr.length;i++){
-        if(i===0){
-            telefonoNuevo+="(";
-            telefonoNuevo+=arr[i];            
-        } else if (i===3){
-            telefonoNuevo+=")";
-            telefonoNuevo+=" ";
-            telefonoNuevo+=arr[i];
-        } else if (i===6){
-            telefonoNuevo+="-";
-            telefonoNuevo+=arr[i];
-        } else {
-            telefonoNuevo+=arr[i];
+    
+    if(arr.length !== 10){
+        return "Su telefono tiene un numero incorrecto de digitos."
+    }
+
+    else {
+        let areTheyLessThan10 = arr.every(n=>n<10);
+        let areTheyInteger= arr.every(n=>Number.isInteger(n))
+        
+        if((!areTheyLessThan10) || (!areTheyInteger)){
+            return "Digitacion incorrecta, ingrese el numero nuevamente."
+        }
+
+        else {
+            for(let i=0;i<arr.length;i++){
+                if(i===0){
+                    telefonoNuevo+="(";
+                    telefonoNuevo+=arr[i];            
+                } else if (i===3){
+                    telefonoNuevo+=")";
+                    telefonoNuevo+=" ";
+                    telefonoNuevo+=arr[i];
+                } else if (i===6){
+                    telefonoNuevo+="-";
+                    telefonoNuevo+=arr[i];
+                } else {
+                    telefonoNuevo+=arr[i];
+                }
+            }
         }
     }
+    
     return telefonoNuevo;
 }
 
-console.log(darFormatoAlNumero(arregloLiteral));
+
+console.log(formatear(arregloNumerico));
+
