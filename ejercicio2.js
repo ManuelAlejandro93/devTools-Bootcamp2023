@@ -1,8 +1,5 @@
 let arregloNumerico = [3,1,4,3,4,1,5,1,3,1];
 
-let arregloLiteral = arregloNumerico.map(
-    n=>n.toString()
-)
 
 function formatear (arr){
     let telefonoNuevo = "";
