@@ -29,8 +29,8 @@ function drawX (n){
 
     for(let i=0;i<arrayAModificar.length;i++){
         let cadenaAImprimir="";
-        arrayAModificar[i]="X";
-        arrayAModificar[arrayAModificar.length-1-i]="X";
+        arrayAModificar[i]="*";
+        arrayAModificar[arrayAModificar.length-1-i]="*";
         cadenaAImprimir = arrayAModificar.join("");
         console.log(cadenaAImprimir);
         arrayAModificar=[...arrayRespaldo];
