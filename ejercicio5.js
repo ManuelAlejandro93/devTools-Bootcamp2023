@@ -4,18 +4,11 @@ function drawX (n){
     let arrayAModificar;
     let arrayRespaldo;
 
-    if(n%2===0){
-        n--;
-        console.log(`Tu numero fue aproximado a ${n}.`);
-    } else if (n<=0){
-        return "Ingrese numeros enteros mayores a 0"
+    if (n<=0 || typeof n !== "number"){
+        return console.log("Ingrese numeros enteros mayores a 0");
     } else if (!Number.isInteger(n)){
+        console.log(`Tu numero ${n} será aproximado a ${Math.floor(n)}`);
         n=Math.floor(n);
-        if(n%2===0){
-            n--;
-        }
-
-        console.log(`Tu numero fue aproximado a ${n}`);
     }
 
 
@@ -25,7 +18,6 @@ function drawX (n){
 
     arrayAModificar = stringVacio.split("");
     arrayRespaldo=[...arrayAModificar];
-
 
     for(let i=0;i<arrayAModificar.length;i++){
         let cadenaAImprimir="";
@@ -39,4 +31,4 @@ function drawX (n){
     return null;
 }
 
-drawX(21);
+drawX(13.77777);
